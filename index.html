@@ -8,29 +8,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
-  <style>
-    /* Fixed sidebar */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 250px; 
-      background-color: #222;
-      color: white;
-      padding: 20px;
-      overflow-y: auto; /* scroll if content too tall */
-    }
-    .sidebar a {
-      color: white;
-      display: block;
-      margin: 8px 0;
-    }
-    .main-content {
-      margin-left: 240px; /* space for sidebar */
-      padding: 20px;
-    }
-  </style>
+<style>
+  /* Fixed sidebar with flexbox */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; 
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+  }
+  .sidebar a {
+    color: white;
+    display: block;
+    margin: 8px 0;
+  }
+  /* Social links at bottom */
+  .sidebar .social {
+    margin-top: auto; /* pushes this section to the bottom */
+  }
+  .main-content {
+    margin-left: 270px; /* space for sidebar */
+    padding: 20px;
+  }
+</style>
 </head>
 <body>
 
@@ -43,10 +48,6 @@
   
   <!-- Contact Info -->
   <p><b>hlin1@ccny.cuny.edu</b></p>
-  <p>
-    Mechanical Engineering Department<br>
-    The City College of New York
-  </p>
   
   <!-- Navigation -->
   <ul class="nav nav-pills nav-stacked">
@@ -57,11 +58,11 @@
 
   <hr style="border-color: #444;">
 
-  <!-- Social Links -->
-  <p style="margin-top:50px;">
-    <a href="https://www.linkedin.com/in/hai-lu-lin-690948151" target="_blank">LinkedIn</a><br>
+  <!-- Social Links at bottom -->
+  <div class="social">
+    <a href="https://www.linkedin.com/in/hai-lu-lin-690948151" target="_blank">LinkedIn</a>
     <a href="https://github.com/hlin004" target="_blank">GitHub</a>
-  </p>
+  </div>
 </div>
 
 <!-- Main Content -->
@@ -72,6 +73,10 @@
   <div style="margin-top:3%; text-align:justify;">                
     <p>About me</p>
     <p>...?</p>
+    <p>
+      Mechanical Engineering Department<br>
+      The City College of New York
+    </p>
   </div>
 </div>
 
